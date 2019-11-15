@@ -30,7 +30,7 @@ class Triangle extends GeometricFigure {
     getArea () {
         return (this.triBase*this.triHeight)/2;
     }
-};
+}
 
 class Square extends GeometricFigure {
     constructor(sideLength){
@@ -40,7 +40,7 @@ class Square extends GeometricFigure {
     getArea() {
         return this.sideLegth**2;
     }
-};
+}
 
 class Circle extends GeometricFigure {
     constructor(radius) {
@@ -50,10 +50,10 @@ class Circle extends GeometricFigure {
     getArea() {
         return (this.radius**2)*Math.PI
     }
-};
+}
 
 function handleFigures(figures) {
-    let totalArea = figures.reduce((result, item) => {
+    let totalArea = figures.reduce(function(result, item) {
         let itemArea = item.getArea();
         console.log(`Geometric figure: ${item.toString()} - area: ${itemArea}`);
         return result + itemArea;
