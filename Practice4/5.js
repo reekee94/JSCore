@@ -58,11 +58,13 @@ function handleFigures(figures) {
         console.log(`Geometric figure: ${item.toString()} - area: ${itemArea}`);
         return result + itemArea;
     }, 0);
-    console.log(totalArea);
+    return (totalArea);
 }
 
 
 
 const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
 console.log(handleFigures(figures));
+
+
 
