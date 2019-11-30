@@ -23,8 +23,8 @@ function showMonthName(month) {
         12: "December" };
 
     if (month > 12) { throw new MonthException('Incorrect month number')}
-    if (typeof month !== 'number') {throw MonthException('Not a number')}
-    if ()
+    if (typeof month !== 'number') {throw new MonthException('Not a number')}
+    if (!month%1 === 0) {throw new MonthException('must be not a float number')}
     } catch(e) { return (`${e.name}, ${e.message}`)}
 
     return monthNames[month]
