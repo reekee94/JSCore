@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<input name="subject_all" class="subject-all" type="checkbox">Select All<br/>
+<input value="1" name="subject" class="subject-list" type="checkbox">Subject 1
+<input value="2" name="subject" class="subject-list" type="checkbox">Subject 2
+<input value="3" name="subject" class="subject-list" type="checkbox">Subject 3
+<input value="4" name="subject" class="subject-list" type="checkbox">Subject 4
+<input value="5" name="subject" class="subject-list" type="checkbox">Subject 5
+<input value="5" name="subject" class="subject-list" type="checkbox">Subject 6
+</body>
+<script>
+    $('.subject-all').on('change', function() {
+        if(this.checked){
+            $('.subject-list').prop('checked', true);
+        }else{
+            $('.subject-list').prop('checked', false);
+        }
+    });
+
+    $(".subject-list*").on('change', function(){
+        if($('.subject-list:checked').length > 2){
+            $('*').prop("disabled", true)
+        }
+    });
+</script>
+</html>
